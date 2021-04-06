@@ -1,6 +1,13 @@
-# pygame template  = skeleton for a new game project
+'''
+Integrantes do grupo:
+    - Marco Couto
+    - Caio Moura
+    - Caio Rangel
+    - Leandro Moreira
+    - Victor Murta
+'''
 import pygame as pg
-import random 
+import randos 
 from settings import *
 from sprites import *
 
