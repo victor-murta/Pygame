@@ -6,10 +6,14 @@ Integrantes do grupo:
     - Leandro Moreira
     - Victor Murta
 '''
+
+#Arquivos I/O : input/output
+
 import pygame as pg
-import randos 
+import random
 from settings import *
 from sprites import *
+from os import path
 
 class Game:
     def __init__(self):
@@ -22,6 +26,16 @@ class Game:
         self.clock = pg.time.Clock()
         self.running = True
         self.font_name = pg.font.match_font(font_name)
+        self.load_data()
+
+    def load_data(self):
+        #carregando maior pontuação
+        self.dir = path.dirname(__file__)
+        with open(path.join(self.dir, hs_file), 'w') as f:
+            try:
+                self.hightscore = int(f.read())
+            except:
+                self.hightscore = 0
 
     def new(self):
         #loop do game // criando uma janela
@@ -110,13 +124,29 @@ class Game:
         self.draw_text(title, 48 , white, width / 2, height / 4)
         self.draw_text("Setas para se movimentar e espaço para pular", 22, white, width / 2, height / 2)
         self.draw_text("Aperte qualquer tecla para começar", 22, white, width / 2, height *3 / 4)
+        self.draw_text("Maior pontuação: "+ str(self.hightscore), 32, white, width / 2, 15)
         pg.display.flip()
         self.wait_for_key()
 
 
     def show_go_screen(self):
         # perdeu (game over) / continuar
-        pass
+        if not self.running:
+            return 
+        self.screen.fill(bgcolor)
+        self.draw_text("FIM DE JOGO", 48 , white, width / 2, height / 4)
+        self.draw_text("Score: "+str(self.score), 35, white, width / 2, height / 2)
+        self.draw_text("Aperte qualquer tecla para jogar novamente", 22, white, width / 2, height *3 / 4)
+        if self.score > self.hightscore:
+            self.hightscore = self.score
+            self.draw_text('Maior pontuação conquistada!', 32, white, width /2, height / 2 + 40 )
+            with open(path.join(self.dir, hs_file), 'w') as f:
+                f.write(str(self.score))
+        else:
+            self.draw_text('Maior pontuação: '+ str(self.hightscore), 32, white, width / 2, height / 2 + 40)
+        pg.display.flip()
+        self.wait_for_key()
+
 
     #função que aguarda o jogador apertar uma tecla no inicio do jogo
     def wait_for_key(self):

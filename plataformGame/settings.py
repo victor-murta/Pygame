@@ -3,6 +3,7 @@ height = 600
 fps = 60
 title = "Por água acima"
 font_name = 'Terminal'
+hs_file = 'hightscore.txt'
 
 #propriedades do jogador
 player_acc = 0.5
@@ -15,7 +16,8 @@ plataform_list = [(0,height - 40, width, 40),
     (width / 2 - 50, height * 3 / 4 ,100, 20 ),
     (125, height - 350, 100, 20),
     (350, 200, 100, 20),
-    (175, 100, 50, 20)
+    (175, 100, 50, 20),
+    (22, 100, 50, 20)
 ]
 
 #cores
