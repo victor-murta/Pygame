@@ -4,6 +4,7 @@ fps = 60
 title = "Por água acima"
 font_name = 'Terminal'
 hs_file = 'hightscore.txt'
+SPRITESHEET = "Mouse0.png"
 
 #propriedades do jogador
 player_acc = 0.5

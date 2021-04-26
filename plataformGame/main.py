@@ -29,13 +29,17 @@ class Game:
         self.load_data()
 
     def load_data(self):
-        #carregando maior pontuação
+        #carregando maior pontuação / carregando os personagens do jogo
         self.dir = path.dirname(__file__)
-        with open(path.join(self.dir, hs_file), 'w') as f:
+        img_dir = path.join(self.dir, 'img')
+        with open(path.join(self.dir, hs_file), 'r') as f:
             try:
                 self.hightscore = int(f.read())
             except:
                 self.hightscore = 0
+
+        #Carregando os sprites
+        self.spritesheet = Spritesheet(path.join(img_dir, SPRITESHEET))
 
     def new(self):
         #loop do game // criando uma janela
@@ -57,7 +61,7 @@ class Game:
             self.clock.tick(fps)
             self.events()
             self.update()
-            self.draw()
+            self.draw() 
     
     def update(self):
         #atualização do jogo - update
