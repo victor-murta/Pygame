@@ -24,7 +24,7 @@ class Player(pg.sprite.Sprite):
         self.current_frame = 0
         self.last_update = 0
         self.load_images()
-        self.image = 
+        self.image = self.game.spritesheet.get_image(7, 3, 120, 120)
         self.image.set_colorkey(black)
         self.rect = self.image.get_rect()
         self.rect.center = (width / 2, height / 2)
@@ -32,9 +32,8 @@ class Player(pg.sprite.Sprite):
         self.vel = vec(0,0)
         self.acc = vec(0,0)
 
-    def load_images(self):
-        self.standing_frames = [self.game.spritesheet.get_image(7, 3, 120, 120),
-        ]
+    # def load_images(self):
+    #     self.standing_frames = []
 
     def update(self):
         self.acc = vec(0 , player_grav)
