@@ -23,7 +23,7 @@ class Player(pg.sprite.Sprite):
         self.jumping = False
         self.current_frame = 0
         self.last_update = 0
-        self.load_images()
+        # self.load_images()
         self.image = self.game.spritesheet.get_image(7, 3, 120, 120)
         self.image.set_colorkey(black)
         self.rect = self.image.get_rect()
