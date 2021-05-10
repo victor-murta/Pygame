@@ -4,7 +4,7 @@ fps = 60
 title = "Por água acima"
 font_name = 'Terminal'
 hs_file = 'hightscore.txt'
-SPRITESHEET = "Mouse0.png"
+SPRITESHEET = "sprites.png"
 
 #propriedades do jogador
 player_acc = 0.5
@@ -21,12 +21,22 @@ plataform_list = [(0,height - 40, width, 40),
     (22, 100, 50, 20)
 ]
 
+#plataformas
+plataform_positions = [(width, 40),
+    (100, 20 ),
+    (100, 20),
+    (100, 20),
+    (50, 20),
+    (50, 20)
+]
+
 #cores
 white = (255, 255, 255)
 black = (0,0,0)
 green = (0, 255, 0)
 blue  = (0,0,255)
-bgcolor = light_blue = (0,155, 155)
+light_blue = (0,155, 155)
+bgcolor = black
 
 
 

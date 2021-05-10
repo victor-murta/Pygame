@@ -49,7 +49,7 @@ class Game:
         self.player = Player(self)
         self.all_sprites.add(self.player)
         for plat in plataform_list:
-            p = Plataform(*plat)
+            p = Plataform(self, *plat)
             self.all_sprites.add(p)
             self.plataforms.add(p)
         self.run()
@@ -95,7 +95,7 @@ class Game:
         # novas plataformas
         while len(self.plataforms) < 6:
             width_range = random.randrange(50, 100)
-            p = Plataform(random.randrange(0, width - width_range),random.randrange(-75, -30), width_range, 20)
+            p = Plataform(self, random.randrange(0, width - width_range),random.randrange(-75, -30), width_range, 20)
             self.plataforms.add(p)
             self.all_sprites.add(p)
 

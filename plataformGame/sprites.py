@@ -1,19 +1,33 @@
 #classes dos sprites
 from settings import *
 import pygame as pg
+import json
+import random
 vec = pg.math.Vector2
 
 class Spritesheet:
     # utility class for loading and parsing spritesheets
     def __init__(self, filename):
+        self.filename = filename
         self.spritesheet = pg.image.load(filename).convert()
+        self.meta_data = self.filename.replace('png', 'json')
+        with open(self.meta_data) as f:
+            self.data = json.load(f)
+        f.close()
 
     def get_image(self, x, y, width, height):
         # grab an image out of a larger spritesheet
         image = pg.Surface((width, height))
+        image.set_colorkey((255,255,255))
         image.blit(self.spritesheet, (0, 0), (x, y, width, height))
-        image = pg.transform.scale(image, (width // 2, height // 2))
         return image
+
+    def parse_sprite(self, name):
+        sprite = self.data['frames'][name]['frame']
+        x, y, w, h = sprite["x"], sprite["y"], sprite["w"], sprite["h"]
+        image = self.get_image(x, y, w, h)
+        return image
+
         
 class Player(pg.sprite.Sprite):
     def __init__(self, game):
@@ -24,8 +38,8 @@ class Player(pg.sprite.Sprite):
         self.current_frame = 0
         self.last_update = 0
         # self.load_images()
-        self.image = self.game.spritesheet.get_image(7, 3, 120, 120)
-        self.image.set_colorkey(black)
+        self.image = self.game.spritesheet.parse_sprite('rato1.png')
+        self.image.set_colorkey(white)
         self.rect = self.image.get_rect()
         self.rect.center = (width / 2, height / 2)
         self.pos = vec(width / 2, height / 2)
@@ -70,10 +84,18 @@ class Player(pg.sprite.Sprite):
 
 
 class Plataform(pg.sprite.Sprite):
-    def __init__(self, x, y, w, h):
+    def __init__(self, game, x, y, w, h):
         pg.sprite.Sprite.__init__(self)
-        self.image = pg.Surface((w, h))
-        self.image.fill(green)
+        self.game = game
+        self.image = self.game.spritesheet.parse_sprite('plataforma1.png')
+        if bool(random.getrandbits(1)):
+            self.image = self.game.spritesheet.parse_sprite('plataforma2.png')
+
+        self.image = self.image.convert()
+        self.image = pg.transform.scale(self.image, (w, h))
+        self.image.set_colorkey(white)
+
+
         self.rect = self.image.get_rect()
-        self.rect.x =  x
+        self.rect.x = x
         self.rect.y = y
