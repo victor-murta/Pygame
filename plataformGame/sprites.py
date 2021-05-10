@@ -36,6 +36,7 @@ class Player(pg.sprite.Sprite):
     #     self.standing_frames = []
 
     def update(self):
+        # self.animate()
         self.acc = vec(0 , player_grav)
         keys = pg.key.get_pressed()
         if keys[pg.K_LEFT]:
@@ -56,6 +57,8 @@ class Player(pg.sprite.Sprite):
             self.pos.x = width
 
         self.rect.midbottom = self.pos
+
+                
     
     def jump(self):
         #pular somente se estiver em uma plataforma
