@@ -71,13 +71,13 @@ class Game:
             hits = pg.sprite.spritecollide(self.player, self.plataforms, False)
             if hits:
                 self.player.pos.y = hits[0].rect.top
-                self.player.vel.y = 0
+                self.player.vel.y = 0  
 
         # jogador tocar na parte de cima da tela
         if self.player.rect.top <= height / 4:
-            self.player.pos.y += abs(self.player.vel.y)
+            self.player.pos.y += max(abs(self.player.vel.y), 2)
             for plat in self.plataforms:
-                plat.rect.y += abs(self.player.vel.y)  
+                plat.rect.y += max(abs(self.player.vel.y), 2)  
                 if plat.rect.top >= height:
                     plat.kill()
                     #a cada plataforma , mais 10 pontos
@@ -95,7 +95,8 @@ class Game:
         # novas plataformas
         while len(self.plataforms) < 6:
             width_range = random.randrange(50, 100)
-            p = Plataform(self, random.randrange(0, width - width_range),random.randrange(-75, -30), width_range, 20)
+            p = Plataform(self, random.randrange(0, width - width_range),
+                random.randrange(-75, -30))
             self.plataforms.add(p)
             self.all_sprites.add(p)
 
@@ -116,7 +117,7 @@ class Game:
         # desenhando os eventos
         self.screen.fill(bgcolor)
         self.all_sprites.draw(self.screen)
-
+        self.screen.blit(self.player.image, self.player.rect)
         self.draw_text(str(self.score), 42 , white, width / 2, 20)
 
         # depois de desenhar tudo, troque o display
