@@ -13,12 +13,12 @@ player_grav = 0.8
 player_jump = 20
 
 #plataformas
-plataform_list = [(0,height - 40, width, 40),
-    (width / 2 - 50, height * 3 / 4 ,100, 20 ),
-    (125, height - 350, 100, 20),
-    (350, 200, 100, 20),
-    (175, 100, 50, 20),
-    (22, 100, 50, 20)
+plataform_list = [(0,height - 60),
+    (width / 2 - 50, height * 3 / 4 ),
+    (125, height - 350),
+    (350, 200),
+    (175, 100),
+    (22, 100)
 ]
 
 #plataformas
@@ -36,7 +36,7 @@ black = (0,0,0)
 green = (0, 255, 0)
 blue  = (0,0,255)
 light_blue = (0,155, 155)
-bgcolor = black
+bgcolor = light_blue
 
 
 
