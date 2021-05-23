@@ -8,7 +8,12 @@ vec = pg.math.Vector2
 class Spritesheet:
     # utility class for loading and parsing spritesheets
     def __init__(self, filename):
+        self.filename = filename
         self.spritesheet = pg.image.load(filename).convert()
+        self.meta_data = self.filename.replace('png', 'json')
+        with open(self.meta_data) as f:
+            self.data = json.load(f)
+        f.close()
 
     def get_image(self, x, y, width, height):
         # grab an image out of a larger spritesheet
@@ -16,6 +21,12 @@ class Spritesheet:
         image.blit(self.spritesheet, (0, 0), (x, y, width, height))
         # image = pg.transform.scale(image, (width // 2, height // 2))
         image = pg.transform.scale(image, (70, 70))
+        return image
+
+    def parse_sprite(self, name):
+        sprite = self.data['frames'][name]['frame']
+        x, y, w, h = sprite["x"], sprite["y"], sprite["w"], sprite["h"]
+        image = self.get_image(x, y, w, h)
         return image
             
 class Player(pg.sprite.Sprite):
@@ -37,19 +48,27 @@ class Player(pg.sprite.Sprite):
 
     def load_images(self):
         self.standing_frames = [
-            self.game.spritesheet.get_image(95, 34, 33, 34),
-            self.game.spritesheet.get_image(0, 119, 31, 29)
+            self.game.spritesheet.parse_sprite('rato1.png'),
+            self.game.spritesheet.parse_sprite('rato2.png'),
+            self.game.spritesheet.parse_sprite('rato3.png'),
+            self.game.spritesheet.parse_sprite('rato4.png'),
+            self.game.spritesheet.parse_sprite('rato5.png'),
+            self.game.spritesheet.parse_sprite('rato6.png'),
+            self.game.spritesheet.parse_sprite('rato7.png')
         ]
 
         for frame in self.standing_frames:
             frame.set_colorkey(white)
         
         self.walk_frames_r = [
-            self.game.spritesheet.get_image(0, 148, 31, 27),
-            self.game.spritesheet.get_image(0, 119, 31, 29)
+            self.game.spritesheet.parse_sprite('RatoAndandoEsquerda.png'),
+            self.game.spritesheet.parse_sprite('RatoAndandoEsquerdaParado.png')
         ]
 
-        self.walk_frames_l = []
+        self.walk_frames_l = [
+            self.game.spritesheet.parse_sprite('RatoAndandoDireita.png'),
+            self.game.spritesheet.parse_sprite('RatoAndandoDireitaParado.png')
+        ]
 
         for frame in self.walk_frames_r:
             frame.set_colorkey(white)
@@ -109,13 +128,13 @@ class Player(pg.sprite.Sprite):
         if self.walking:
             if now - self.last_update > 180:
                 self.last_update = now
-                self.current_frame = (self.current_frame + 1) % len(self.walk_frames_l)
+                self.current_frame = (self.current_frame + 1) % len(self.walk_frames_r)
                 bottom = self.rect.bottom
 
                 if self.vel.x > 0:
                     self.image = self.walk_frames_r[self.current_frame]
                 else:
-                    self.image = self.walk_frames_r[self.current_frame]
+                    self.image = self.walk_frames_l[self.current_frame]
 
                 self.rect = self.image.get_rect()
                 self.rect.bottom = bottom
@@ -137,8 +156,8 @@ class Plataform(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self)
         self.game = game
         images = [
-            self.game.spritesheet.get_image(32, 94, 32, 24),
-            self.game.spritesheet.get_image(48, 35, 33, 27)
+            self.game.spritesheet.parse_sprite('plataforma1.png'),
+            self.game.spritesheet.parse_sprite('plataforma2.png')
         ]
         self.image = choice(images)
         self.image.set_colorkey(white)
