@@ -1,9 +1,249 @@
 {
   "frames": {
-    "gato1.png": {
+    "agua (1).png": {
       "frame": {
         "x": 0,
         "y": 0,
+        "w": 100,
+        "h": 122
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 122
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "agua (2).png": {
+      "frame": {
+        "x": 0,
+        "y": 122,
+        "w": 100,
+        "h": 122
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 122
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "agua (3).png": {
+      "frame": {
+        "x": 0,
+        "y": 244,
+        "w": 100,
+        "h": 122
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 122
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "agua (4).png": {
+      "frame": {
+        "x": 0,
+        "y": 366,
+        "w": 100,
+        "h": 122
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 122
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "agua (5).png": {
+      "frame": {
+        "x": 0,
+        "y": 488,
+        "w": 100,
+        "h": 122
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 122
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "gatoVoador1.png": {
+      "frame": {
+        "x": 0,
+        "y": 610,
+        "w": 78,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "gatoVoador2.png": {
+      "frame": {
+        "x": 0,
+        "y": 723,
+        "w": 78,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "gatoVoador3.png": {
+      "frame": {
+        "x": 0,
+        "y": 836,
+        "w": 78,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "gatoVoador4.png": {
+      "frame": {
+        "x": 0,
+        "y": 949,
+        "w": 78,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "gatoVoador5.png": {
+      "frame": {
+        "x": 0,
+        "y": 1062,
+        "w": 78,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "gato1.png": {
+      "frame": {
+        "x": 0,
+        "y": 1175,
         "w": 114,
         "h": 84
       },
@@ -26,8 +266,8 @@
     },
     "gato2.png": {
       "frame": {
-        "x": 114,
-        "y": 0,
+        "x": 78,
+        "y": 610,
         "w": 114,
         "h": 84
       },
@@ -50,8 +290,8 @@
     },
     "gato3.png": {
       "frame": {
-        "x": 228,
-        "y": 0,
+        "x": 78,
+        "y": 694,
         "w": 114,
         "h": 84
       },
@@ -74,8 +314,8 @@
     },
     "gato4.png": {
       "frame": {
-        "x": 342,
-        "y": 0,
+        "x": 78,
+        "y": 778,
         "w": 114,
         "h": 84
       },
@@ -98,8 +338,8 @@
     },
     "gato5.png": {
       "frame": {
-        "x": 456,
-        "y": 0,
+        "x": 78,
+        "y": 862,
         "w": 114,
         "h": 84
       },
@@ -122,8 +362,8 @@
     },
     "gato6.png": {
       "frame": {
-        "x": 570,
-        "y": 0,
+        "x": 78,
+        "y": 946,
         "w": 114,
         "h": 84
       },
@@ -144,10 +384,10 @@
         "y": 0.5
       }
     },
-    "RatoAndandoEsquerdaParado.png": {
+    "RatoAndandoParadoEsquerda.png": {
       "frame": {
-        "x": 684,
-        "y": 0,
+        "x": 78,
+        "y": 1030,
         "w": 102,
         "h": 68
       },
@@ -170,8 +410,8 @@
     },
     "RatoAndandoEsquerda.png": {
       "frame": {
-        "x": 786,
-        "y": 0,
+        "x": 78,
+        "y": 1098,
         "w": 101,
         "h": 68
       },
@@ -186,54 +426,6 @@
       "sourceSize": {
         "w": 101,
         "h": 68
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "plataforma2.png": {
-      "frame": {
-        "x": 887,
-        "y": 0,
-        "w": 99,
-        "h": 58
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 99,
-        "h": 58
-      },
-      "sourceSize": {
-        "w": 99,
-        "h": 58
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "plataforma1.png": {
-      "frame": {
-        "x": 986,
-        "y": 0,
-        "w": 97,
-        "h": 55
-      },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 97,
-        "h": 55
-      },
-      "sourceSize": {
-        "w": 97,
-        "h": 55
       },
       "pivot": {
         "x": 0.5,
@@ -242,7 +434,7 @@
     },
     "RatoAndandoDireita.png": {
       "frame": {
-        "x": 1083,
+        "x": 100,
         "y": 0,
         "w": 80,
         "h": 68
@@ -266,8 +458,8 @@
     },
     "RatoAndandoDireitaParado.png": {
       "frame": {
-        "x": 986,
-        "y": 55,
+        "x": 100,
+        "y": 68,
         "w": 80,
         "h": 68
       },
@@ -290,8 +482,8 @@
     },
     "RatoCaindoDireita.png": {
       "frame": {
-        "x": 887,
-        "y": 58,
+        "x": 100,
+        "y": 136,
         "w": 80,
         "h": 68
       },
@@ -314,8 +506,8 @@
     },
     "RatoCaindoEsquerda.png": {
       "frame": {
-        "x": 684,
-        "y": 68,
+        "x": 100,
+        "y": 204,
         "w": 80,
         "h": 68
       },
@@ -338,8 +530,8 @@
     },
     "RatoPulandoDireita.png": {
       "frame": {
-        "x": 764,
-        "y": 68,
+        "x": 100,
+        "y": 272,
         "w": 80,
         "h": 68
       },
@@ -362,8 +554,8 @@
     },
     "RatoPulandoEsquerda.png": {
       "frame": {
-        "x": 0,
-        "y": 84,
+        "x": 100,
+        "y": 340,
         "w": 80,
         "h": 68
       },
@@ -386,8 +578,8 @@
     },
     "rato1.png": {
       "frame": {
-        "x": 80,
-        "y": 84,
+        "x": 100,
+        "y": 408,
         "w": 80,
         "h": 68
       },
@@ -410,8 +602,8 @@
     },
     "rato2.png": {
       "frame": {
-        "x": 160,
-        "y": 84,
+        "x": 100,
+        "y": 476,
         "w": 80,
         "h": 68
       },
@@ -432,10 +624,34 @@
         "y": 0.5
       }
     },
+    "plataforma2.png": {
+      "frame": {
+        "x": 100,
+        "y": 544,
+        "w": 99,
+        "h": 58
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 99,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 99,
+        "h": 58
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
     "rato3.png": {
       "frame": {
-        "x": 240,
-        "y": 84,
+        "x": 180,
+        "y": 0,
         "w": 80,
         "h": 68
       },
@@ -458,8 +674,8 @@
     },
     "rato4.png": {
       "frame": {
-        "x": 320,
-        "y": 84,
+        "x": 180,
+        "y": 68,
         "w": 80,
         "h": 68
       },
@@ -482,8 +698,8 @@
     },
     "rato5.png": {
       "frame": {
-        "x": 400,
-        "y": 84,
+        "x": 180,
+        "y": 136,
         "w": 80,
         "h": 68
       },
@@ -506,8 +722,8 @@
     },
     "rato6.png": {
       "frame": {
-        "x": 480,
-        "y": 84,
+        "x": 180,
+        "y": 204,
         "w": 80,
         "h": 68
       },
@@ -530,8 +746,8 @@
     },
     "rato7.png": {
       "frame": {
-        "x": 560,
-        "y": 84,
+        "x": 180,
+        "y": 272,
         "w": 80,
         "h": 68
       },
@@ -552,120 +768,192 @@
         "y": 0.5
       }
     },
-    "gatoVoador1.png": {
+    "plataforma1.png": {
       "frame": {
-        "x": 1163,
-        "y": 0,
-        "w": 78,
-        "h": 113
+        "x": 180,
+        "y": 340,
+        "w": 97,
+        "h": 55
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 78,
-        "h": 113
+        "w": 97,
+        "h": 55
       },
       "sourceSize": {
-        "w": 78,
-        "h": 113
+        "w": 97,
+        "h": 55
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "gatoVoador2.png": {
+    "Queijo-frame-1.png": {
       "frame": {
-        "x": 1066,
-        "y": 68,
-        "w": 78,
-        "h": 113
+        "x": 180,
+        "y": 395,
+        "w": 25,
+        "h": 27
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 78,
-        "h": 113
+        "w": 25,
+        "h": 27
       },
       "sourceSize": {
-        "w": 78,
-        "h": 113
+        "w": 25,
+        "h": 27
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "gatoVoador3.png": {
+    "Queijo-frame-2.png": {
       "frame": {
-        "x": 967,
-        "y": 123,
-        "w": 78,
-        "h": 113
+        "x": 180,
+        "y": 422,
+        "w": 25,
+        "h": 27
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 78,
-        "h": 113
+        "w": 25,
+        "h": 27
       },
       "sourceSize": {
-        "w": 78,
-        "h": 113
+        "w": 25,
+        "h": 27
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "gatoVoador4.png": {
+    "Queijo-frame-3.png": {
       "frame": {
-        "x": 967,
-        "y": 236,
-        "w": 78,
-        "h": 113
+        "x": 180,
+        "y": 449,
+        "w": 25,
+        "h": 27
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 78,
-        "h": 113
+        "w": 25,
+        "h": 27
       },
       "sourceSize": {
-        "w": 78,
-        "h": 113
+        "w": 25,
+        "h": 27
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "gatoVoador5.png": {
+    "Queijo-frame-5.png": {
       "frame": {
-        "x": 844,
-        "y": 126,
-        "w": 78,
-        "h": 113
+        "x": 180,
+        "y": 476,
+        "w": 25,
+        "h": 27
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 78,
-        "h": 113
+        "w": 25,
+        "h": 27
       },
       "sourceSize": {
-        "w": 78,
-        "h": 113
+        "w": 25,
+        "h": 27
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Queijo-frame-6.png": {
+      "frame": {
+        "x": 180,
+        "y": 503,
+        "w": 25,
+        "h": 27
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 25,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 27
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Queijo-frame-7.png": {
+      "frame": {
+        "x": 260,
+        "y": 0,
+        "w": 25,
+        "h": 27
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 25,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 27
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Queijo-frame-4.png": {
+      "frame": {
+        "x": 260,
+        "y": 27,
+        "w": 22,
+        "h": 27
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 22,
+        "h": 27
+      },
+      "sourceSize": {
+        "w": 22,
+        "h": 27
       },
       "pivot": {
         "x": 0.5,
@@ -679,8 +967,8 @@
     "image": "sprites.png",
     "format": "RGBA8888",
     "size": {
-      "w": 1241,
-      "h": 349
+      "w": 285,
+      "h": 1259
     },
     "scale": 1
   }
