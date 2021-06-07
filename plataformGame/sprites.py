@@ -2,7 +2,7 @@
 from settings import *
 import pygame as pg
 import json
-from random import choice
+import random
 vec = pg.math.Vector2
 
 class Spritesheet:
@@ -65,16 +65,20 @@ class Player(pg.sprite.Sprite):
             self.game.spritesheet.parse_sprite('RatoAndandoEsquerdaParado.png')
         ]
 
+        for frame in self.walk_frames_r:
+            frame.set_colorkey(white)
+            #Horizontal ,vertical
+            # self.walk_frames_l.append(pg.transform.flip(frame, False, True))
+
         self.walk_frames_l = [
             self.game.spritesheet.parse_sprite('RatoAndandoDireita.png'),
             self.game.spritesheet.parse_sprite('RatoAndandoDireitaParado.png')
         ]
 
-        for frame in self.walk_frames_r:
+        for frame in self.walk_frames_l:
             frame.set_colorkey(white)
             #Horizontal ,vertical
-            self.walk_frames_l.append(pg.transform.flip(frame, False, True))
-        
+            # self.walk_frames_l.append(pg.transform.flip(frame, False, True))
         
 
 
@@ -159,8 +163,12 @@ class Plataform(pg.sprite.Sprite):
             self.game.spritesheet.parse_sprite('plataforma1.png'),
             self.game.spritesheet.parse_sprite('plataforma2.png')
         ]
-        self.image = choice(images)
+        self.image = random.choice(images)
         self.image.set_colorkey(white)
+        ratio = 1.77
+        height_updated = random.randint(35, 70)
+        width_updated = height_updated * ratio
+        self.image = pg.transform.scale(self.image, (int(round(width_updated)), height_updated))
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
