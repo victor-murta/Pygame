@@ -67,7 +67,6 @@ class Player(pg.sprite.Sprite):
             self.game.spritesheet.parse_sprite('RatoAndandoEsquerda.png'),
             self.game.spritesheet.parse_sprite('RatoAndandoEsquerdaParado.png')
         ]
-
         for frame in self.walk_frames_r:
             frame.set_colorkey(white)
             #Horizontal ,vertical
@@ -77,11 +76,32 @@ class Player(pg.sprite.Sprite):
             self.game.spritesheet.parse_sprite('RatoAndandoDireita.png'),
             self.game.spritesheet.parse_sprite('RatoAndandoDireitaParado.png')
         ]
-
         for frame in self.walk_frames_l:
             frame.set_colorkey(white)
-            #Horizontal ,vertical
-            # self.walk_frames_l.append(pg.transform.flip(frame, False, True))
+
+        self.walk_frames_r_up = [
+            self.game.spritesheet.parse_sprite('RatoPulandoEsquerda.png')
+        ]
+        for frame in self.walk_frames_r_up:
+            frame.set_colorkey(white)
+
+        self.walk_frames_l_up = [
+            self.game.spritesheet.parse_sprite('RatoPulandoDireita.png')
+        ]
+        for frame in self.walk_frames_l_up:
+            frame.set_colorkey(white)
+
+        self.walk_frames_r_down = [
+            self.game.spritesheet.parse_sprite('RatoCaindoEsquerda.png')
+        ]
+        for frame in self.walk_frames_r_down:
+            frame.set_colorkey(white)
+
+        self.walk_frames_l_down = [
+            self.game.spritesheet.parse_sprite('RatoCaindoDireita.png')
+        ]
+        for frame in self.walk_frames_l_down:
+            frame.set_colorkey(white)
         
 
 
@@ -140,10 +160,21 @@ class Player(pg.sprite.Sprite):
                 self.current_frame = (self.current_frame + 1) % len(self.walk_frames_r)
                 bottom = self.rect.bottom
 
-                if self.vel.x > 0:
-                    self.image = self.walk_frames_r[self.current_frame]
+                if self.vel.y < 0:
+                    if self.vel.x > 0:
+                        self.image = self.walk_frames_r_up[0]
+                    else:
+                        self.image = self.walk_frames_l_up[0]
+                elif self.vel.y > 0:
+                    if self.vel.x > 0:
+                        self.image = self.walk_frames_r_down[0]
+                    else:
+                        self.image = self.walk_frames_l_down[0]
                 else:
-                    self.image = self.walk_frames_l[self.current_frame]
+                    if self.vel.x > 0:
+                        self.image = self.walk_frames_r[self.current_frame]
+                    else:
+                        self.image = self.walk_frames_l[self.current_frame]
 
                 self.rect = self.image.get_rect()
                 self.rect.bottom = bottom
