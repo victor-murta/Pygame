@@ -3,6 +3,7 @@ from settings import *
 import pygame as pg
 import json
 import random
+from os import path
 vec = pg.math.Vector2
 
 class Spritesheet:
@@ -44,6 +45,8 @@ class Player(pg.sprite.Sprite):
         self.pos = vec(40, height - 100)
         self.vel = vec(0, 0)
         self.acc = vec(0, 0)
+        self.dir = path.dirname(__file__)
+        self.sound_dir = path.join(self.dir, 'sound')
 
 
     def load_images(self):
@@ -89,6 +92,8 @@ class Player(pg.sprite.Sprite):
         self.rect.x -= 2
         if hits:
             self.vel.y = -player_jump
+            pg.mixer.music.load(path.join(self.sound_dir, 'rat-jump.wav'))
+            pg.mixer.music.play(0)
 
 
     def update(self):
