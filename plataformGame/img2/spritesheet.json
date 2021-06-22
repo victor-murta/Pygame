@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"Mouse0.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 202,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 202,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 202,
+				"h": 150
+			}
+		},
+		"Mouse1.png": {
+			"frame": {
+				"x": 205,
+				"y": 1,
+				"w": 202,
+				"h": 151
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 202,
+				"h": 151
+			},
+			"sourceSize": {
+				"w": 202,
+				"h": 151
+			}
+		},
+		"Mouse2.png": {
+			"frame": {
+				"x": 409,
+				"y": 1,
+				"w": 201,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 201,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 201,
+				"h": 150
+			}
+		},
+		"b.1.png": {
+			"frame": {
+				"x": 612,
+				"y": 1,
+				"w": 381,
+				"h": 95
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 381,
+				"h": 95
+			},
+			"sourceSize": {
+				"w": 381,
+				"h": 95
+			}
+		},
+		"b.2.png": {
+			"frame": {
+				"x": 995,
+				"y": 1,
+				"w": 202,
+				"h": 102
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 202,
+				"h": 102
+			},
+			"sourceSize": {
+				"w": 202,
+				"h": 102
+			}
+		},
+		"design-6d9e0c95-9981-4786-9b62-b75651d558db.png": {
+			"frame": {
+				"x": 1199,
+				"y": 1,
+				"w": 87,
+				"h": 93
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 87,
+				"h": 93
+			},
+			"sourceSize": {
+				"w": 87,
+				"h": 93
+			}
+		},
+		"design-c0cfeaa2-1557-44d5-8527-13d7e680e7a3.png": {
+			"frame": {
+				"x": 1288,
+				"y": 1,
+				"w": 62,
+				"h": 94
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 62,
+				"h": 94
+			},
+			"sourceSize": {
+				"w": 62,
+				"h": 94
+			}
+		},
+		"design-d496562b-515a-4c31-932b-2a6a43702b61.png": {
+			"frame": {
+				"x": 1352,
+				"y": 1,
+				"w": 67,
+				"h": 94
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 67,
+				"h": 94
+			},
+			"sourceSize": {
+				"w": 67,
+				"h": 94
+			}
+		},
+		"queijo.png": {
+			"frame": {
+				"x": 1421,
+				"y": 1,
+				"w": 95,
+				"h": 98
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 95,
+				"h": 98
+			},
+			"sourceSize": {
+				"w": 95,
+				"h": 98
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1517,
+			"h": 153
+		},
+		"scale": "1"
+	}
+}

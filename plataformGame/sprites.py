@@ -1,8 +1,8 @@
 #classes dos sprites
 from settings import *
 import pygame as pg
-import json
-from random import choice
+
+from random import choice, randrange
 vec = pg.math.Vector2
 
 class Spritesheet:
@@ -20,7 +20,9 @@ class Spritesheet:
             
 class Player(pg.sprite.Sprite):
     def __init__(self, game):
-        pg.sprite.Sprite.__init__(self)
+        self._layer = player_layer
+        self.groups = game.all_sprites
+        pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.walking = False
         self.jumping = False
@@ -37,16 +39,18 @@ class Player(pg.sprite.Sprite):
 
     def load_images(self):
         self.standing_frames = [
-            self.game.spritesheet.get_image(95, 34, 33, 34),
-            self.game.spritesheet.get_image(0, 119, 31, 29)
+            self.game.spritesheet.get_image(1, 1, 202, 150),
+            self.game.spritesheet.get_image(205, 1, 202, 151),
+            self.game.spritesheet.get_image(409, 1, 201, 150),
+
         ]
 
         for frame in self.standing_frames:
             frame.set_colorkey(white)
         
         self.walk_frames_r = [
-            self.game.spritesheet.get_image(0, 148, 31, 27),
-            self.game.spritesheet.get_image(0, 119, 31, 29)
+            self.game.spritesheet.get_image(1, 1, 202, 150),
+            self.game.spritesheet.get_image(205, 1, 202, 151),
         ]
 
         self.walk_frames_l = []
@@ -54,7 +58,7 @@ class Player(pg.sprite.Sprite):
         for frame in self.walk_frames_r:
             frame.set_colorkey(white)
             #Horizontal ,vertical
-            self.walk_frames_l.append(pg.transform.flip(frame, False, True))
+            self.walk_frames_l.append(pg.transform.flip(frame, True, False))
         
         
 
@@ -64,7 +68,9 @@ class Player(pg.sprite.Sprite):
         self.rect.x += 2
         hits = pg.sprite.spritecollide(self, self.game.plataforms, False)
         self.rect.x -= 2
-        if hits:
+        if hits :
+            self.game.jump_sound.play()
+            self.jumping = True
             self.vel.y = -player_jump
 
 
@@ -113,7 +119,7 @@ class Player(pg.sprite.Sprite):
                 bottom = self.rect.bottom
 
                 if self.vel.x > 0:
-                    self.image = self.walk_frames_r[self.current_frame]
+                    self.image = self.walk_frames_l[self.current_frame]
                 else:
                     self.image = self.walk_frames_r[self.current_frame]
 
@@ -128,20 +134,80 @@ class Player(pg.sprite.Sprite):
                 self.image = self.standing_frames[self.current_frame]
                 self.rect = self.image.get_rect()
                 self.rect.bottom = bottom
-                
-
-
 
 class Plataform(pg.sprite.Sprite):
     def __init__(self, game, x, y):
-        pg.sprite.Sprite.__init__(self)
+        self._layer = plataform_layer
+        self.groups = game.all_sprites, game.plataforms
+        pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        images = [
-            self.game.spritesheet.get_image(32, 94, 32, 24),
-            self.game.spritesheet.get_image(48, 35, 33, 27)
-        ]
+
+        images = [self.game.spritesheet.get_image(612, 1, 381, 95),
+                  self.game.spritesheet.get_image(995, 1, 202, 102)]
         self.image = choice(images)
-        self.image.set_colorkey(white)
+        self.image.set_colorkey(black)
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+
+        if randrange(100) < pow_spaw_pct:
+            Pow(self.game, self)
+
+class Pow(pg.sprite.Sprite):
+    def __init__(self, game, plat):
+        self._layer = pow_layer
+        self.groups = game.all_sprites, game.powerups
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.plat = plat
+        self.type = choice(['boost'])
+        self.image = self.game.spritesheet.get_image(1505, 1, 95, 98)
+        self.image.set_colorkey(black)
+        self.rect = self.image.get_rect()
+        self.rect.centerx = self.plat.rect.centerx
+        self.rect.bottom = self.plat.rect.top - 5
+
+    
+    def update(self):
+        self.rect.bottom = self.plat.rect.top - 5
+
+        if not self.game.plataforms.has(self.plat):
+            self.kill()
+
+
+class Mob(pg.sprite.Sprite):
+    def __init__(self, game):
+        self._layer = mob_layer
+        self.groups = game.all_sprites, game.mobs
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.image_up = self.game.spritesheet.get_image(1352, 1, 67, 94)
+        self.image_up.set_colorkey(black)
+        self.image_down = self.game.spritesheet.get_image(1288, 1, 62, 94)
+        self.image_down.set_colorkey(black)
+        self.image = self.image_up
+        self.rect = self.image.get_rect()
+        self.rect.centerx = choice([-100, width + 100])
+        self.vx = randrange(1, 4)
+        if self.rect.centerx > width:
+            self.vx *= -1
+        self.rect.y = randrange(height / 2)
+        self.vy = 0
+        self.dy = 0.5
+
+    def update(self):
+        self.rect.x += self.vx
+        self.vy += self.dy
+        if self.vy > 3 or self.vy < -3:
+            self.dy *= -1
+        center = self.rect.center
+        if self.dy < 0:
+            self.image = self.image_up
+        else:
+            self.image = self.image_down
+        self.rect = self.image.get_rect()
+        self.rect.center = center
+        self.rect.y += self.vy
+        if self.rect.left > width + 100 or self.rect.right < -100:
+            self.kill()
+    
